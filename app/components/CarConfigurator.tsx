@@ -362,15 +362,11 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
     useEffect(() => {
         setMounted(true);
-        // Add a small delay before showing the 3D content to ensure proper initialization
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1000);
-
-        return () => clearTimeout(timer);
+        // Remove the loading delay since it's causing issues
+        setIsLoading(false);
     }, []);
 
-    // Don't render anything during SSR
+    // Only show loading spinner during initial mount
     if (!mounted) {
         return <LoadingSpinner />;
     }
@@ -428,18 +424,14 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
             {/* Main Content */}
             <div className="flex-1 relative">
-                {isLoading ? (
-                    <LoadingSpinner />
-                ) : (
-                    <ClientOnlyThreeScene
-                        baseColor={baseColor}
-                        accentColor={accentColor}
-                        material={currentMaterial}
-                        style={currentStyle}
-                        rgbEffect={currentRGBEffect}
-                        activeAccessories={activeAccessories}
-                    />
-                )}
+                <ClientOnlyThreeScene
+                    baseColor={baseColor}
+                    accentColor={accentColor}
+                    material={currentMaterial}
+                    style={currentStyle}
+                    rgbEffect={currentRGBEffect}
+                    activeAccessories={activeAccessories}
+                />
 
                 {/* Environment Selector */}
                 <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-lg p-3">
