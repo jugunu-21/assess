@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 const images = [
@@ -65,7 +65,6 @@ export default function PictureGallery() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
-    const [showInfo, setShowInfo] = useState(false);
     const [activeCategory, setActiveCategory] = useState('all');
 
     // 3D tilt effect
@@ -97,6 +96,7 @@ export default function PictureGallery() {
     const handleMouseLeave = () => {
         x.set(0);
         y.set(0);
+        setIsHovered(false);
     };
 
     const slideVariants = {
@@ -161,6 +161,7 @@ export default function PictureGallery() {
                         className="absolute w-full h-full"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => setIsHovered(true)}
                         style={{
                             rotateX,
                             rotateY,

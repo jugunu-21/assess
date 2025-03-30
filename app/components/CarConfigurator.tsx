@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei';
 import dynamic from 'next/dynamic';
@@ -350,10 +350,8 @@ const ClientOnlyThreeScene = dynamic(() => Promise.resolve(ThreeScene), {
 
 export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairConfiguratorProps) {
     const [mounted, setMounted] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const [baseColor, setBaseColor] = useState(initialColor);
     const [accentColor, setAccentColor] = useState('#1a1a1a');
-    const [currentView, setCurrentView] = useState('warehouse');
     const [currentSection, setCurrentSection] = useState('style');
     const [currentMaterial, setCurrentMaterial] = useState(materials[0]);
     const [currentStyle, setCurrentStyle] = useState(chairStyles[0].value);
@@ -362,8 +360,6 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
     useEffect(() => {
         setMounted(true);
-        // Remove the loading delay since it's causing issues
-        setIsLoading(false);
     }, []);
 
     // Only show loading spinner during initial mount
@@ -377,12 +373,6 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
         { name: 'MATERIAL', value: 'material' },
         { name: 'RGB LIGHTING', value: 'rgb' },
         { name: 'ACCESSORIES', value: 'accessories' },
-    ];
-
-    const environments = [
-        { name: 'Studio', image: '/environments/studio.jpg' },
-        { name: 'Gaming Room', image: '/environments/gaming.jpg' },
-        { name: 'Office', image: '/environments/office.jpg' },
     ];
 
     const toggleAccessory = (value: string) => {
@@ -432,24 +422,6 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                     rgbEffect={currentRGBEffect}
                     activeAccessories={activeAccessories}
                 />
-
-                {/* Environment Selector */}
-                <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-white rounded-xl shadow-lg p-3">
-                    <p className="text-sm font-semibold mb-2 text-center">ENVIRONMENT</p>
-                    <div className="flex gap-2">
-                        {environments.map((env, index) => (
-                            <button
-                                key={env.name}
-                                suppressHydrationWarning
-                                className={`w-24 h-16 rounded-lg border-2 ${index === 0 ? 'border-purple-500' : 'border-transparent'
-                                    } overflow-hidden`}
-                                onClick={() => setCurrentView(env.name.toLowerCase())}
-                            >
-                                <div className="w-full h-full bg-gray-200"></div>
-                            </button>
-                        ))}
-                    </div>
-                </div>
             </div>
 
             {/* Configuration Panel */}
