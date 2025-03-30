@@ -384,7 +384,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
     };
 
     return (
-        <div className="w-full h-screen flex flex-col">
+        <div className="relative w-full h-screen flex flex-col">
             {/* Top Navigation */}
             <div className="w-full bg-white border-b border-gray-200">
                 <div className="container mx-auto px-4">
