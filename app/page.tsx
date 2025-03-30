@@ -1,6 +1,7 @@
 import CircularMenu from './components/CircularMenu';
 import ChairConfigurator from './components/CarConfigurator';
 import VideoSection from './components/VideoSection';
+import PictureGallery from './components/PictureGallery';
 
 export default function Home() {
   return (
@@ -18,7 +19,14 @@ export default function Home() {
           </h1>
           <CircularMenu />
         </section>
+
         <VideoSection />
+        <section className="py-12">
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Iceland Gallery
+          </h1>
+          <PictureGallery />
+        </section>
       </div>
     </main>
   );
