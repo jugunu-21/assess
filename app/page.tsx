@@ -1,9 +1,9 @@
-import CircularMenu from './components/CircularMenu';
 import ChairConfigurator from './components/CarConfigurator';
 import VideoSection from './components/VideoSection';
 import PictureGallery from './components/PictureGallery';
 import { LinkPreviewDemo } from './components/linkPreviewComponent';
 import EnhancedCircularMenu from './components/EnhancedCircularMenu';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
