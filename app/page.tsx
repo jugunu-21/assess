@@ -3,6 +3,7 @@ import ChairConfigurator from './components/CarConfigurator';
 import VideoSection from './components/VideoSection';
 import PictureGallery from './components/PictureGallery';
 import { LinkPreviewDemo } from './components/linkPreviewComponent';
+import EnhancedCircularMenu from './components/EnhancedCircularMenu';
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
@@ -18,7 +19,9 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
             Interactive Menu
           </h1>
-          <CircularMenu />
+
+          <EnhancedCircularMenu />
+
         </section>
 
         <VideoSection />
@@ -34,6 +37,7 @@ export default function Home() {
           </h1>
           <LinkPreviewDemo />
         </section>
+
       </div>
     </main>
   );
