@@ -402,12 +402,12 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                 {item.name}
                             </button>
                         ))}
-                        <button
+                        {/* <button
                             suppressHydrationWarning
                             className="ml-auto px-6 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
                         >
                             ADD TO CART
-                        </button>
+                        </button> */}
                     </nav>
                 </div>
             </div>
@@ -428,7 +428,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
             <div className="absolute top-24 right-4 w-80 bg-white rounded-lg shadow-lg">
                 {currentSection === 'style' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Chair Style</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Chair Style</h3>
                         <div className="space-y-4">
                             {chairStyles.map((style) => (
                                 <button
@@ -440,8 +440,8 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                         }`}
                                     onClick={() => setCurrentStyle(style.value)}
                                 >
-                                    <h4 className="font-semibold">{style.name}</h4>
-                                    <p className="text-sm text-gray-600">{style.description}</p>
+                                    <h4 className="font-semibold text-gray-900">{style.name}</h4>
+                                    <p className="text-sm text-gray-700">{style.description}</p>
                                 </button>
                             ))}
                         </div>
@@ -450,7 +450,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'colors' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Base Color</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Base Color</h3>
                         <div className="flex flex-wrap gap-3 mb-6">
                             {baseColors.map((option) => (
                                 <button
@@ -463,7 +463,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                 />
                             ))}
                         </div>
-                        <h4 className="text-lg font-semibold mb-3">Accent Color</h4>
+                        <h4 className="text-lg font-semibold mb-3 text-gray-900">Accent Color</h4>
                         <div className="flex flex-wrap gap-3">
                             {accentColors.map((option) => (
                                 <button
@@ -481,7 +481,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'material' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Material</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Material</h3>
                         <div className="space-y-3">
                             {materials.map((material) => (
                                 <button
@@ -492,7 +492,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                         }`}
                                     onClick={() => setCurrentMaterial(material)}
                                 >
-                                    <h4 className="font-semibold">{material.name}</h4>
+                                    <h4 className="font-semibold text-gray-900">{material.name}</h4>
                                 </button>
                             ))}
                         </div>
@@ -501,7 +501,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'rgb' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">RGB Lighting</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900">RGB Lighting</h3>
                         <div className="space-y-3">
                             {rgbEffects.map((effect) => (
                                 <button
@@ -512,7 +512,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                         }`}
                                     onClick={() => setCurrentRGBEffect(effect)}
                                 >
-                                    <h4 className="font-semibold">{effect.name}</h4>
+                                    <h4 className="font-semibold text-gray-900">{effect.name}</h4>
                                     <div className="flex gap-1 mt-2">
                                         {effect.colors.map((color, i) => (
                                             <div
@@ -530,7 +530,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'accessories' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Accessories</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Accessories</h3>
                         <div className="space-y-3">
                             {accessories.map((accessory) => (
                                 <button
@@ -541,7 +541,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                         }`}
                                     onClick={() => toggleAccessory(accessory.value)}
                                 >
-                                    <h4 className="font-semibold">{accessory.name}</h4>
+                                    <h4 className="font-semibold text-gray-900">{accessory.name}</h4>
                                 </button>
                             ))}
                         </div>
