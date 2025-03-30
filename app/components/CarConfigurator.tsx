@@ -394,8 +394,8 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                 key={item.value}
                                 suppressHydrationWarning
                                 className={`py-4 px-2 border-b-2 ${currentSection === item.value
-                                    ? 'border-purple-500 text-gray-900'
-                                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    ? 'border-purple-500 text-black font-semibold'
+                                    : 'border-transparent text-gray-700 hover:text-black'
                                     }`}
                                 onClick={() => setCurrentSection(item.value)}
                             >
@@ -425,10 +425,10 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
             </div>
 
             {/* Configuration Panel */}
-            <div className="absolute top-24 right-4 w-80 bg-white rounded-lg shadow-lg">
+            <div className="absolute top-24 right-4 w-80 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl">
                 {currentSection === 'style' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Chair Style</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">Chair Style</h3>
                         <div className="space-y-4">
                             {chairStyles.map((style) => (
                                 <button
@@ -436,12 +436,12 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                                     suppressHydrationWarning
                                     className={`w-full p-4 rounded-lg border-2 ${currentStyle === style.value
                                         ? 'border-purple-500 bg-purple-50'
-                                        : 'border-gray-200'
+                                        : 'border-gray-300 hover:border-purple-300'
                                         }`}
                                     onClick={() => setCurrentStyle(style.value)}
                                 >
-                                    <h4 className="font-semibold text-gray-900">{style.name}</h4>
-                                    <p className="text-sm text-gray-700">{style.description}</p>
+                                    <h4 className="font-bold text-black">{style.name}</h4>
+                                    <p className="text-sm text-gray-800 mt-1">{style.description}</p>
                                 </button>
                             ))}
                         </div>
@@ -450,26 +450,24 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'colors' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Base Color</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">Base Color</h3>
                         <div className="flex flex-wrap gap-3 mb-6">
                             {baseColors.map((option) => (
                                 <button
                                     key={option.name}
-                                    className={`w-10 h-10 rounded-full border-2 ${baseColor === option.color ? 'border-purple-500' : 'border-gray-200'
-                                        }`}
+                                    className={`w-10 h-10 rounded-full border-2 ${baseColor === option.color ? 'border-purple-500 ring-2 ring-purple-300' : 'border-gray-300'}`}
                                     style={{ backgroundColor: option.color }}
                                     onClick={() => setBaseColor(option.color)}
                                     title={option.name}
                                 />
                             ))}
                         </div>
-                        <h4 className="text-lg font-semibold mb-3 text-gray-900">Accent Color</h4>
+                        <h4 className="text-lg font-bold mb-3 text-black">Accent Color</h4>
                         <div className="flex flex-wrap gap-3">
                             {accentColors.map((option) => (
                                 <button
                                     key={option.name}
-                                    className={`w-10 h-10 rounded-full border-2 ${accentColor === option.color ? 'border-purple-500' : 'border-gray-200'
-                                        }`}
+                                    className={`w-10 h-10 rounded-full border-2 ${accentColor === option.color ? 'border-purple-500 ring-2 ring-purple-300' : 'border-gray-300'}`}
                                     style={{ backgroundColor: option.color }}
                                     onClick={() => setAccentColor(option.color)}
                                     title={option.name}
@@ -481,18 +479,18 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'material' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Material</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">Material</h3>
                         <div className="space-y-3">
                             {materials.map((material) => (
                                 <button
                                     key={material.value}
                                     className={`w-full p-4 rounded-lg border-2 ${currentMaterial.value === material.value
                                         ? 'border-purple-500 bg-purple-50'
-                                        : 'border-gray-200'
+                                        : 'border-gray-300 hover:border-purple-300'
                                         }`}
                                     onClick={() => setCurrentMaterial(material)}
                                 >
-                                    <h4 className="font-semibold text-gray-900">{material.name}</h4>
+                                    <h4 className="font-bold text-black">{material.name}</h4>
                                 </button>
                             ))}
                         </div>
@@ -501,23 +499,23 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'rgb' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4 text-gray-900">RGB Lighting</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">RGB Lighting</h3>
                         <div className="space-y-3">
                             {rgbEffects.map((effect) => (
                                 <button
                                     key={effect.value}
                                     className={`w-full p-4 rounded-lg border-2 ${currentRGBEffect.value === effect.value
                                         ? 'border-purple-500 bg-purple-50'
-                                        : 'border-gray-200'
+                                        : 'border-gray-300 hover:border-purple-300'
                                         }`}
                                     onClick={() => setCurrentRGBEffect(effect)}
                                 >
-                                    <h4 className="font-semibold text-gray-900">{effect.name}</h4>
+                                    <h4 className="font-bold text-black">{effect.name}</h4>
                                     <div className="flex gap-1 mt-2">
                                         {effect.colors.map((color, i) => (
                                             <div
                                                 key={i}
-                                                className="w-6 h-6 rounded-full"
+                                                className="w-6 h-6 rounded-full border border-gray-300"
                                                 style={{ backgroundColor: color }}
                                             />
                                         ))}
@@ -530,18 +528,18 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
 
                 {currentSection === 'accessories' && (
                     <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4 text-gray-900">Accessories</h3>
+                        <h3 className="text-xl font-bold mb-4 text-black">Accessories</h3>
                         <div className="space-y-3">
                             {accessories.map((accessory) => (
                                 <button
                                     key={accessory.value}
                                     className={`w-full p-4 rounded-lg border-2 ${activeAccessories.includes(accessory.value)
                                         ? 'border-purple-500 bg-purple-50'
-                                        : 'border-gray-200'
+                                        : 'border-gray-300 hover:border-purple-300'
                                         }`}
                                     onClick={() => toggleAccessory(accessory.value)}
                                 >
-                                    <h4 className="font-semibold text-gray-900">{accessory.name}</h4>
+                                    <h4 className="font-bold text-black">{accessory.name}</h4>
                                 </button>
                             ))}
                         </div>
@@ -555,7 +553,7 @@ export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairCon
                     <button
                         key={icon}
                         suppressHydrationWarning
-                        className="w-8 h-8 bg-purple-800 rounded-full"
+                        className="w-8 h-8 bg-purple-800 rounded-full hover:bg-purple-700 transition-colors"
                     />
                 ))}
             </div>

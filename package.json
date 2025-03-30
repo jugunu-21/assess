@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.6",
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.0",
     "@types/three": "^0.175.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.6.2",
+    "motion": "^12.6.2",
     "next": "15.2.4",
     "postcss": "^8.5.3",
+    "qss": "^3.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2",
     "three": "^0.175.0"
   },
   "devDependencies": {
