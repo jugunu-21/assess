@@ -1,5 +1,6 @@
 import CircularMenu from './components/CircularMenu';
 import ChairConfigurator from './components/CarConfigurator';
+import VideoSection from './components/VideoSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           </h1>
           <CircularMenu />
         </section>
+        <VideoSection />
       </div>
     </main>
   );
