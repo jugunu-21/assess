@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface SquareData {
     id: number;
@@ -54,11 +54,11 @@ const ImageCard = ({ sq, index }: { sq: SquareData; index: number }) => {
 
     return (
         <div className={`relative w-full h-full ${index === 0 ? 'col-span-2 row-span-2' :
-                index === 1 ? 'col-span-1 row-span-1' :
-                    index === 2 ? 'col-span-1 row-span-1' :
-                        index === 3 ? 'col-span-2 row-span-1' :
-                            index === 4 ? 'col-span-1 row-span-1' :
-                                'col-span-1 row-span-1'
+            index === 1 ? 'col-span-1 row-span-1' :
+                index === 2 ? 'col-span-1 row-span-1' :
+                    index === 3 ? 'col-span-2 row-span-1' :
+                        index === 4 ? 'col-span-1 row-span-1' :
+                            'col-span-1 row-span-1'
             }`}>
             <motion.div
                 layout
@@ -116,6 +116,11 @@ const ShuffleGrid = () => {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
     const [squares, setSquares] = useState(generateSquares());
 
+    const shuffleSquares = useCallback(() => {
+        setSquares(generateSquares());
+        timeoutRef.current = setTimeout(shuffleSquares, 3000);
+    }, []);
+
     useEffect(() => {
         shuffleSquares();
 
@@ -124,12 +129,7 @@ const ShuffleGrid = () => {
                 clearTimeout(timeoutRef.current);
             }
         };
-    }, []);
-
-    const shuffleSquares = () => {
-        setSquares(generateSquares());
-        timeoutRef.current = setTimeout(shuffleSquares, 3000);
-    };
+    }, [shuffleSquares]);
 
     return (
         <div className="grid grid-cols-3 grid-rows-3 h-[600px] gap-2">

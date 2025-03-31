@@ -106,10 +106,11 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
             case 'gif':
                 return (
                     <div className="relative h-40 w-full overflow-hidden rounded-lg">
-                        <img
+                        <Image
                             src={content.gifUrl || content.thumbnail}
                             alt={content.title}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                         />
                         <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
                             {getTypeIcon(content.type)}
