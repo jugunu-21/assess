@@ -15,13 +15,15 @@ const contentData = {
         description: "Learn about the fundamental concepts of motion through engaging video demonstrations.",
         type: "video" as const,
         thumbnail: "/assets/link-preview/video-thumbnail.jpg",
+        videoUrl: "/assets/link-preview/video.mp4",
         href: "/pages/video-page"
     },
     gif: {
         title: "Animation in Action",
         description: "Experience the power of animation through dynamic GIF demonstrations.",
         type: "gif" as const,
-        thumbnail: "/assets/link-preview/animation.gif",
+        thumbnail: "/assets/link-preview/animation-thumbnail.jpg",
+        gifUrl: "/assets/link-preview/Animation (1).gif",
         href: "/pages/gif-page"
     },
     pdf: {
@@ -29,6 +31,7 @@ const contentData = {
         description: "Access comprehensive documentation and detailed information in PDF format.",
         type: "pdf" as const,
         thumbnail: "/assets/link-preview/pdf-thumbnail.jpg",
+        pdfUrl: "/assets/link-preview/anaya_ConfirmationPage-253510688087_cuet.pdf",
         href: "/pages/pdf-page"
     }
 };

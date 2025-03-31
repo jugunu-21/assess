@@ -12,6 +12,11 @@ interface PreviewContent {
     description: string;
     type: ContentType;
     thumbnail: string;
+    href: string;
+    // Add new fields for different content types
+    videoUrl?: string;
+    gifUrl?: string;
+    pdfUrl?: string;
 }
 
 interface EnhancedLinkPreviewProps {
@@ -28,6 +33,7 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
     className,
 }) => {
     const springConfig = { stiffness: 100, damping: 15 };
+    const [isPlaying, setIsPlaying] = React.useState(true);
 
     // Motion values for tracking mouse position
     const mouseX = useMotionValue(0);
@@ -69,6 +75,77 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
         }
     };
 
+    const renderPreviewContent = () => {
+        switch (content.type) {
+            case 'video':
+                return (
+                    <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                        {isPlaying && content.videoUrl ? (
+                            <video
+                                src={content.videoUrl}
+                                className="w-full h-full object-cover"
+                                controls
+                                autoPlay
+                                loop
+                                muted
+                            />
+                        ) : (
+                            <Image
+                                src={content.thumbnail}
+                                alt={content.title}
+                                fill
+                                className="object-cover cursor-pointer"
+                                onClick={() => setIsPlaying(true)}
+                            />
+                        )}
+                        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
+                            {getTypeIcon(content.type)}
+                        </div>
+                    </div>
+                );
+            case 'gif':
+                return (
+                    <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                        <img
+                            src={content.gifUrl || content.thumbnail}
+                            alt={content.title}
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
+                            {getTypeIcon(content.type)}
+                        </div>
+                    </div>
+                );
+            case 'pdf':
+                return (
+                    <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                        <iframe
+                            src={content.pdfUrl}
+                            className="w-full h-full"
+                            title={content.title}
+                        />
+                        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
+                            {getTypeIcon(content.type)}
+                        </div>
+                    </div>
+                );
+            default:
+                return (
+                    <div className="relative h-40 w-full overflow-hidden rounded-lg">
+                        <Image
+                            src={content.thumbnail}
+                            alt={content.title}
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
+                            {getTypeIcon(content.type)}
+                        </div>
+                    </div>
+                );
+        }
+    };
+
     return (
         <HoverCardPrimitive.Root
             openDelay={50}
@@ -100,17 +177,7 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
                     }}
                     className="space-y-2"
                 >
-                    <div className="relative h-40 w-full overflow-hidden rounded-lg">
-                        <Image
-                            src={content.thumbnail}
-                            alt={content.title}
-                            fill
-                            className="object-cover"
-                        />
-                        <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded-full text-sm">
-                            {getTypeIcon(content.type)}
-                        </div>
-                    </div>
+                    {renderPreviewContent()}
                     <div className="space-y-1">
                         <h3 className="font-medium text-lg dark:text-white">
                             {content.title}
