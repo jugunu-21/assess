@@ -166,6 +166,7 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
                 side="top"
                 align="center"
                 sideOffset={10}
+                asChild
             >
                 <motion.div
                     style={{
@@ -175,16 +176,17 @@ export const EnhancedLinkPreview: React.FC<EnhancedLinkPreviewProps> = ({
                         rotateY,
                         transformStyle: "preserve-3d",
                     }}
-                    className="space-y-2"
                 >
-                    {renderPreviewContent()}
-                    <div className="space-y-1">
-                        <h3 className="font-medium text-lg dark:text-white">
-                            {content.title}
-                        </h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                            {content.description}
-                        </p>
+                    <div className="space-y-2">
+                        {renderPreviewContent()}
+                        <div className="space-y-1">
+                            <h3 className="font-medium text-lg dark:text-white">
+                                {content.title}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                                {content.description}
+                            </p>
+                        </div>
                     </div>
                 </motion.div>
             </HoverCardPrimitive.Content>
