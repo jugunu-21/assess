@@ -11,10 +11,10 @@ const VideoSection = () => {
                 muted
                 loop
                 playsInline
-                src="/Burning Firewood 4K Video.mp4"
+                src="https://res.cloudinary.com/dgz7reiyb/video/upload/v1743407003/video_t4vhjs.mp4"
             >
                 <source
-                    src="/Burning Firewood 4K Video.mp4"
+                    src="https://res.cloudinary.com/dgz7reiyb/video/upload/v1743407003/video_t4vhjs.mp4"
                     type="video/mp4"
                 />
                 Your browser does not support the video tag.
