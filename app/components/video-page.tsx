@@ -8,7 +8,7 @@ export default function VideoPage() {
                 <div className="aspect-video">
                     <iframe
                         className="w-full h-full rounded-lg"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        src="https://res.cloudinary.com/dgz7reiyb/video/upload/v1743407003/video_t4vhjs.mp4"
                         title="Sample Video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen

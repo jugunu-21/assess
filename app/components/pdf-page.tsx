@@ -7,7 +7,7 @@ export default function PdfPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="h-[600px]">
                     <iframe
-                        src="/assets/link-preview/sample.pdf"
+                        src="/assets/link-preview/anaya_ConfirmationPage-253510688087_cuet.pdf"
                         className="w-full h-full rounded-lg"
                         title="PDF Document"
                     />

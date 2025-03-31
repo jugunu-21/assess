@@ -15,7 +15,7 @@ const contentData = {
         description: "Learn about the fundamental concepts of motion through engaging video demonstrations.",
         type: "video" as const,
         thumbnail: "/assets/link-preview/video-thumbnail.jpg",
-        videoUrl: "/assets/link-preview/video.mp4",
+        videoUrl: "https://res.cloudinary.com/dgz7reiyb/video/upload/v1743407003/video_t4vhjs.mp4",
         href: "/pages/video-page"
     },
     gif: {

@@ -1,8 +1,8 @@
-export default function SubsectionPage({
-    params,
-}: {
+import React from 'react';
+
+const SubsectionPage: React.FC<{
     params: { section: string; subsection: string };
-}) {
+}> = ({ params }) => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
             <div className="max-w-2xl mx-auto">
@@ -29,4 +29,6 @@ export default function SubsectionPage({
             </div>
         </div>
     );
-}
+};
+
+export default SubsectionPage;

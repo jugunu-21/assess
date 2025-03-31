@@ -8,7 +8,7 @@ export default function GifPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative h-[400px]">
                     <Image
-                        src="/assets/link-preview/animation.gif"
+                        src="/assets/link-preview/Animation (1).gif"
                         alt="Animated demonstration"
                         fill
                         className="object-cover rounded-lg"
