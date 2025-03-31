@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cynlr Assessment Project
 
-## Getting Started
+A modern web application built with Next.js, React, and Three.js for 3D visualization.
 
-First, run the development server:
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://cynlr-assessment.vercel.app/)
+
+## 🌐 Live Demo
+
+Visit the live application at: [https://cynlr-assessment.vercel.app/](https://cynlr-assessment.vercel.app/)
+
+## 🚀 Features
+
+- Next.js 15 with App Router
+- React 19
+- Three.js for 3D graphics
+- TailwindCSS for styling
+- TypeScript support
+- Framer Motion for animations
+- Radix UI components
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** TailwindCSS
+- **3D Graphics:** Three.js, React Three Fiber, React Three Drei
+- **UI Components:** Radix UI
+- **Animations:** Framer Motion
+- **Development Tools:** ESLint, PostCSS
+
+## 📋 Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn package manager
+
+## 🔧 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/jugunu-21/cynlr-assessment.git
+cd cynlr-assessment
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory and add your environment variables:
+```env
+# Add your environment variables here
+```
+
+## 🚀 Development
+
+To run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is deployed on Vercel. To deploy your own instance:
 
-## Learn More
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build settings
+4. Click "Deploy" and your site will be live
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Building for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a production build:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+# or
+yarn build
+```
 
-## Deploy on Vercel
+To start the production server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run start
+# or
+yarn start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧪 Linting
+
+To run the linter:
+
+```bash
+npm run lint
+# or
+yarn lint
+```
+
+## 📁 Project Structure
+
+```
+cynlr-assessment/
+├── app/                 # Next.js app directory
+├── public/             # Static assets
+├── .next/              # Next.js build output
+├── node_modules/       # Dependencies
+└── package.json        # Project configuration
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Author
+
+- GitHub: [@jugunu-21](https://github.com/jugunu-21)
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Three.js community for 3D graphics capabilities
+- All contributors and maintainers of the used libraries
