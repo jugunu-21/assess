@@ -100,7 +100,7 @@ const sections: Section[] = [
     },
 ];
 
-export default function EnhancedCircularMenu() {
+export default function InteractiveButtion() {
     const [isMainHovered, setIsMainHovered] = useState(false);
     const [hoveredSection, setHoveredSection] = useState<string | null>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);

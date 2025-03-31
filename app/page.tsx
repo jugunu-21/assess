@@ -1,8 +1,8 @@
 import ChairConfigurator from './components/CarConfigurator';
 import VideoSection from './components/VideoSection';
 import PictureGallery from './components/PictureGallery';
-import EnhancedCircularMenu from './components/EnhancedCircularMenu';
-import { LinkPreviewDemo } from './components/linkPreviewComponent';
+import InteractiveButtion from './components/InteractiveButton';
+import { LinkPreview } from './components/LinkPreview';
 
 export default function Home() {
   return (
@@ -13,14 +13,14 @@ export default function Home() {
             Interactive Menu
           </h1>
 
-          <EnhancedCircularMenu />
+          <InteractiveButtion />
 
         </section>
-        <section className="h-screen">
+        <section className="">
           <h1 className="text-3xl font-bold text-center text-gray-800 pt-8 mb-4">
             Link Preview
           </h1>
-          <LinkPreviewDemo />
+          <LinkPreview />
         </section>
         <section className="">
           <h1 className="text-3xl font-bold text-center text-gray-800 pt-8 mb-4">
