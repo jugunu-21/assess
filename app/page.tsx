@@ -35,7 +35,7 @@ export default function Home() {
           </h1>
           <VideoSection />
         </section>
-        <section className="py-12 h-screen">
+        <section className=" my-12 py-12 ">
           <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
             Iceland Gallery
           </h1>
