@@ -349,7 +349,7 @@ const ClientOnlyThreeScene = dynamic(() => Promise.resolve(ThreeScene), {
 });
 
 export default function ChairConfigurator({ initialColor = '#FF0000' }: ChairConfiguratorProps) {
-    const [mounted, setMounted] = useState(false);
+    const [mounted, setMounted] = useState(true);
     const [baseColor, setBaseColor] = useState(initialColor);
     const [accentColor, setAccentColor] = useState('#1a1a1a');
     const [currentSection, setCurrentSection] = useState('style');
